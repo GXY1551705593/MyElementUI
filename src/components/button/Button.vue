@@ -23,7 +23,6 @@ import {onMounted, ref} from "vue";
 
 const _buttonRef = ref<HTMLButtonElement>();
 onMounted(()=>{
-  console.log('buttonRef === ', _buttonRef.value)
 })
 //宏函数
 defineOptions({

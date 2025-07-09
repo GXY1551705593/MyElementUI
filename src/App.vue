@@ -3,7 +3,6 @@ import Button from "./components/button/Button.vue";
 import { onMounted, ref } from "vue";
 import { getCurrentTheme, toggleTheme } from "./utils/theme";
 
-const btn = ref();
 const currentTheme = ref<'light' | 'dark'>('light');
 
 const handleThemeChange = (event: CustomEvent) => {
@@ -21,8 +20,6 @@ onMounted(() => {
 
   // 监听主题变化事件
   window.addEventListener('theme-change', handleThemeChange as EventListener);
-
-  console.log('btn === ', btn.value?.buttonRef);
 });
 </script>
 

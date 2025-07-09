@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './assets/styles/index.scss'
 import App from './App.vue'
 import { getCurrentTheme } from './utils/theme'
+import './index.ts'
 
 // 初始化主题
 const theme = getCurrentTheme();
