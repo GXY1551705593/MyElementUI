@@ -1,0 +1,139 @@
+.ms-button {
+  --ms-button-font-weight: var(--ms-font-weight-primary);
+  --ms-button-border-color: var(--ms-border-color);
+  --ms-button-bg-color: var(--ms-fill-color-blank);
+  --ms-button-text-color: var(--ms-text-color-regular);
+  --ms-button-disabled-text-color: var(--ms-disabled-text-color);
+  --ms-button-disabled-bg-color: var(--ms-fill-color-blank);
+  --ms-button-disabled-border-color: var(--ms-border-color-light);
+  --ms-button-hover-text-color: var(--ms-color-primary);
+  --ms-button-hover-bg-color: var(--ms-color-primary-light-9);
+  --ms-button-hover-border-color: var(--ms-color-primary-light-7);
+  --ms-button-active-text-color: var(--ms-button-hover-text-color);
+  --ms-button-active-border-color: var(--ms-color-primary);
+  --ms-button-active-bg-color: var(--ms-button-hover-bg-color);
+  --ms-button-outline-color: var(--ms-color-primary-light-5);
+  --ms-button-active-color: var(--ms-text-color-primary);
+}
+
+.ms-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--ms-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--ms-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  background-color: var(--ms-button-bg-color);
+  border: var(--ms-border);
+  border-color: var(--ms-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--ms-font-size-base);
+  border-radius: var(--ms-border-radius-base);
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--ms-button-hover-text-color);
+    border-color: var(--ms-button-hover-border-color);
+    background-color: var(--ms-button-hover-bg-color);
+    outline: none;
+  }
+
+  &:active {
+    color: var(--ms-button-active-text-color);
+    border-color: var(--ms-button-active-border-color);
+    background-color: var(--ms-button-active-bg-color);
+    outline: none;
+  }
+
+  &.is-plain {
+    --ms-button-hover-text-color: var(--ms-color-primary);
+    --ms-button-hover-bg-color: var(--ms-fill-color-blank);
+    --ms-button-hover-border-color: var(--ms-color-primary);
+  }
+
+  /*round*/
+  &.is-round {
+    border-radius: var(--ms-border-radius-round);
+  }
+
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  /*disabled*/
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--ms-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--ms-button-disabled-bg-color);
+    border-color: var(--ms-button-disabled-border-color);
+  }
+}
+
+@each $type in primary, success, warning, info, danger {
+  .ms-button--#{$type} {
+  --ms-button-text-color: var(--ms-bg-color-overlay);
+  --ms-button-bg-color: var(--ms-color-#{$type});
+  --ms-button-border-color: var(--ms-color-#{$type});
+  --ms-button-outline-color: var(--ms-color-#{$type}-light-5);
+  --ms-button-active-color: var(--ms-color-#{$type}-dark-2);
+  --ms-button-hover-text-color: var(--ms-bg-color-overlay);
+  --ms-button-hover-bg-color: var(--ms-color-#{$type}-light-3);
+  --ms-button-hover-border-color: var(--ms-color-#{$type}-light-3);
+  --ms-button-active-bg-color: var(--ms-color-#{$type}-dark-2);
+  --ms-button-active-border-color: var(--ms-color-#{$type}-dark-2);
+  --ms-button-disabled-text-color: var(--ms-bg-color-overlay);
+  --ms-button-disabled-bg-color: var(--ms-color-#{$type}-light-5);
+  --ms-button-disabled-border-color: var(--ms-color-#{$type}-light-5);
+}
+
+  .ms-button--#{$type},.is-plain {
+  --ms-button-text-color: var(--ms-color-#{$type});
+  --ms-button-bg-color: var(--ms-color-#{$type}-light-9);
+  --ms-button-border-color: var(--ms-color-#{$type}-light-5);
+  --ms-button-hover-text-color: var(--ms-bg-color-overlay);
+  --ms-button-hover-bg-color: var(--ms-color-#{$type});
+  --ms-button-hover-border-color: var(--ms-color-#{$type});
+  --ms-button-active-text-color: var(--ms-bg-color-overlay);
+}
+}
+
+.ms-button--large {
+  --ms-button-size: 40px;
+  height: var(--ms-button-size);
+  padding: 12px 19px;
+  font-size: var(--ms-font-size-base);
+  border-radius: var(--ms-border-radius-base);
+}
+
+.ms-button--small {
+  --ms-button-size: 24px;
+  height: var(--ms-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--ms-border-radius-base) - 1px);
+}
+
+[class*="ms-icon"] + span {
+  margin-left: 6px;
+}
