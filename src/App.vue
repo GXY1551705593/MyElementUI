@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Button from "./components/button/Button.vue";
 import { onMounted, ref } from "vue";
-import { getCurrentTheme, toggleTheme } from "./hooks/theme";
+import { getCurrentTheme, toggleTheme } from "./until/theme";
 
 const currentTheme = ref<'light' | 'dark'>('light');
 

@@ -11,5 +11,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/index.ts", "src/components/**/*", "src/hooks/**/*","src/shims-scss.d.ts"]
+  "include": ["src/index.ts", "src/components/**/*", "src/until/**/*","src/shims-scss.d.ts"]
 }
