@@ -19,7 +19,7 @@ MyElementUI 提供了完整的主题切换功能，支持白天（亮色）和�
 
 ```typescript
 // 导入主题工具函数
-import { getCurrentTheme, setTheme, toggleTheme } from './utils/theme';
+import { getCurrentTheme, setTheme, toggleTheme } from './hooks/theme';
 
 // 获取当前主题
 const currentTheme = getCurrentTheme(); // 返回 'light' 或 'dark'
@@ -53,7 +53,7 @@ const newTheme = toggleTheme(); // 自动切换并返回新主题
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { getCurrentTheme, toggleTheme } from './utils/theme';
+import { getCurrentTheme, toggleTheme } from './hooks/theme';
 
 const currentTheme = ref<'light' | 'dark'>('light');
 
@@ -256,7 +256,7 @@ window.addEventListener('theme-change', (event: CustomEvent) => {
 ### 2. 系统主题跟随
 
 ```typescript
-import { watchSystemTheme } from './utils/theme';
+import { watchSystemTheme } from './hooks/theme';
 
 // 监听系统主题变化（仅在未手动设置主题时生效）
 const cleanup = watchSystemTheme();
@@ -373,7 +373,7 @@ const handleToggle = () => {
 ```typescript
 // composables/useTheme.ts
 import { ref, onMounted } from 'vue';
-import { getCurrentTheme, setTheme, toggleTheme as toggleThemeUtil } from '../utils/theme';
+import { getCurrentTheme, setTheme, toggleTheme as toggleThemeUtil } from '../hooks/theme';
 
 export function useTheme() {
   const currentTheme = ref<'light' | 'dark'>('light');
@@ -541,7 +541,7 @@ src/
 
 2. **扩展类型定义**
 ```typescript
-// src/utils/theme.ts
+// src/hooks/theme.ts
 export type ThemeType = 'light' | 'dark' | 'custom';
 ```
 

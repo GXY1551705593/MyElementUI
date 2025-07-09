@@ -1,5 +1,6 @@
 import type {App} from 'vue';
 import Button from "./components/button/Button.vue";
+import './assets/styles/index.scss'
 
 // 组件列表
 const components = [Button]
@@ -8,14 +9,15 @@ const components = [Button]
 const install = (app:App):void =>{
     components.forEach(component => {
         // 组件需要有name属性
-        if (component.name) {
-            app.component(component.name, component);
-        } else {
-            console.warn('Component is missing name property:', component);
-        }
+        app.component(component.__name!, component);
     })
 }
 
 // 支持按需引入和全量引入
-export {Button}
-export default {install}
+export default {
+    install
+}
+
+export {
+    Button
+}
