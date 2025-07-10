@@ -7,4 +7,5 @@ import { getCurrentTheme } from './until/theme'
 const theme = getCurrentTheme();
 document.documentElement.setAttribute('data-theme', theme);
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.mount('#app')

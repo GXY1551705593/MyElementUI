@@ -20,10 +20,16 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue'],
       output: {
+        exports: 'named',
         globals: {
           vue: 'Vue'
         },
-        exports: 'named'
+        assetFileNames: (chunkInfo)=>{
+          if(chunkInfo.name === 'gxy-element-ui.css') {
+            return 'index.css'
+          }
+          return chunkInfo.name as string
+        }
       }
     }
   }
