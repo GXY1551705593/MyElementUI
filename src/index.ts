@@ -18,6 +18,12 @@ const install = (app:App):void =>{
     })
 }
 
+import { getCurrentTheme } from './until/theme'
+
+// 初始化主题
+const theme = getCurrentTheme();
+document.documentElement.setAttribute('data-theme', theme);
+
 // 支持按需引入和全量引入
 export default {
     install
