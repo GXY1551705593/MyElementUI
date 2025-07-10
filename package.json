@@ -1,24 +1,29 @@
 {
   "name": "gxy-element-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && npm run build:umd &&  npm run build:es",
-    "build:umd": "vue-tsc -b && vite build --config vite.umd.config.ts",
-    "build:es": "vue-tsc -b && vite build --config vite.es.config.ts",
+    "build:umd": "vite build --config vite.umd.config.ts",
+    "build:es": "vite build --config vite.es.config.ts",
     "preview": "vite preview"
   },
-  "main": "./dist/gxy-element-ui.umd.cjs",
-  "module": "./dist/gxy-element-ui.js",
+  "main": "./dist/umd/gxy-element-ui.umd.cjs",
+  "module": "./dist/es/gxy-element-ui.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/gxy-element-ui.js",
-      "require": "./dist/gxy-element-ui.umd.cjs"
+      "import": "./dist/es/gxy-element-ui.js",
+      "require": "./dist/umd/gxy-element-ui.umd.cjs"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
     }
   },
   "peerDependencies": {

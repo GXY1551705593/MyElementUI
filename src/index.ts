@@ -10,7 +10,6 @@ library.add(fas)
 
 // 组件列表
 const components = [Button]
-
 // 插件install 方法
 const install = (app:App):void =>{
     components.forEach(component => {

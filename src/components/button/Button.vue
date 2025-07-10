@@ -26,7 +26,7 @@ onMounted(()=>{
 })
 //宏函数
 defineOptions({
-  name: 'MsButton'
+  name: 'Button'
 })
 withDefaults(defineProps<ButtonProps>(),{
   nativeType: 'button'
@@ -38,7 +38,7 @@ defineExpose({
 
 <script lang="ts">
 export default {
-  name: 'MsButton'
+  name: 'Button'
 }
 </script>
 
