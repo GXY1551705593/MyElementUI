@@ -36,12 +36,6 @@ defineExpose({
 })
 </script>
 
-<script lang="ts">
-export default {
-  name: 'Button'
-}
-</script>
-
 <style lang="scss" scoped>
 @use "./Button.scss";
 </style>

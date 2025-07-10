@@ -14,8 +14,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'GxyElementUI',
-      fileName: 'gxy-element-ui',
-      formats: ['es', 'umd']
+      fileName: 'gxy-element-ui'
     },
     rollupOptions: {
       external: ['vue'],
